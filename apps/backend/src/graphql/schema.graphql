@@ -1,0 +1,33 @@
+type Query {
+  service(id: ID!): Service
+  listings(filter: String): [Service!]
+  # user(id: ID!): User # As per spec
+}
+
+type Service {
+  id: ID!
+  name: String!
+  description: String
+  category: String
+  # contacts: ContactDetails # Example of nested type
+  # location: String
+  # userProfile: User # Link to user who listed it
+}
+
+# type User {
+#   id: ID!
+#   username: String!
+#   # other user fields
+# }
+
+# type ContactDetails {
+#   phone: String
+#   email: String
+#   website: String
+# }
+
+# Extend with mutations if proxying them, e.g.
+# type Mutation {
+#   updateProfile(userId: ID!, data: UserProfileInput!): User
+# }
+# input UserProfileInput { ... }

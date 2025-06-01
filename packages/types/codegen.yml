@@ -1,0 +1,37 @@
+# packages/types/codegen.yml
+# This is a placeholder configuration. It cannot be run in the current environment.
+
+overwrite: true
+schema: "../backend/src/graphql/schema.graphql" # Path to the backend's schema
+documents:
+  - "../frontend-temp/src/**/*.tsx" # Path to frontend queries/mutations (if using .tsx/.ts files)
+  # - "../frontend-temp/src/**/*.graphql" # Or if using .graphql files
+generates:
+  src/generated/graphql.ts: # Output path for generated types
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      # - "typescript-react-apollo" # If using React Apollo hooks
+      # - "typescript-resolvers" # For backend resolver signatures
+    config:
+      # Naming conventions, scalar types, etc.
+      # Example:
+      # enumsAsTypes: true
+      # skipTypename: false
+      # withHooks: true # If using typescript-react-apollo
+      # mappers: # If you have domain models different from GraphQL types
+      #   Service: ./src/index.ts#Service # Maps GraphQL Service to our Service interface
+  # Example for generating schema.json for other tools if needed
+  # ./schema.json:
+  #  plugins:
+  #    - "introspection"
+
+# To run (conceptually, if dependencies were installed):
+# In packages/types/package.json scripts:
+# "generate": "graphql-codegen --config codegen.yml"
+# Requires devDependencies:
+# "@graphql-codegen/cli": "...",
+# "@graphql-codegen/typescript": "...",
+# "@graphql-codegen/typescript-operations": "...",
+# "@graphql-codegen/typescript-react-apollo": "..." (if used)
+# "@graphql-codegen/introspection": "..." (if used)

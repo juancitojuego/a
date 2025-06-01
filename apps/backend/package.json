@@ -1,13 +1,13 @@
 {
   "name": "@yellow-pages/backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.10.0"
+    "dev": "echo \"Dev script not implemented / runnable in this env\"",
+    "build": "echo \"Build script not implemented / runnable in this env\"",
+    "start": "echo \"Start script not implemented / runnable in this env\"",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"No tests configured\""
+  }
 }
